@@ -1,0 +1,54 @@
+Answer: [0, 1, 2, 3, 4, 5, 6, 13, 20, 27, 34, 41, 48]
+
+How I found it (without running code) and proof sketch:
+- The graph is a 7x7 grid (nodes labeled row-major from 0 to 48). Node n corresponds to coordinates (r, c) with r = floor(n/7), c = n mod 7. So 0 is (0,0) and 48 is (6,6).
+- Edges exist only between orthogonally adjacent grid neighbors, each with weight 100.
+- Any path from (0,0) to (6,6) must change row by +6 and column by +6, i.e., it must take at least 12 steps (six downs and six rights in some order). Since every edge has weight 100, the minimum possible path length is 12 × 100 = 1200.
+- The path 0 → 1 → 2 → 3 → 4 → 5 → 6 → 13 → 20 → 27 → 34 → 41 → 48 follows exactly 12 edges: six steps to the right along the top row from (0,0) to (0,6), then six steps down along the last column to (6,6). This path achieves the lower bound, so it is shortest.
+- Note: there are many other shortest paths as well (e.g., go down first to (6,0) and then across to (6,6): 0 → 7 → 14 → 21 → 28 → 35 → 42 → 43 → 44 → 45 → 46 → 47 → 48), all with 12 edges.
+
+No code was run; the result is obtained by reasoning about the grid structure, coordinates, and the Manhattan distance lower bound for a uniform-weight grid. If you’re writing a paper, you can present the above as a constructive proof of optimality and include the explicit shortest-path example(s).
+
+Answer: [1, 6, 14, 40]
+
+Proof (without code):
+- All edges have the same weight (100), so the shortest path is the one with the fewest hops.
+- From source 1, its neighbors are {0, 6, 7}. None of these are directly connected to 40 (40’s neighbors are {2, 27, 20, 14}), so a 2-hop path 1 → x → 40 is impossible.
+- Check a 3-hop path. Notably, 1 → 6 → 14 → 40 is valid because:
+  - 1 is connected to 6
+  - 6 is connected to 14
+  - 14 is connected to 40
+- Therefore a 3-edge path exists. Since no 2-edge path exists, the distance from 1 to 40 is 3, and [1, 6, 14, 40] is one shortest path.
+- Other shortest paths also exist (e.g., [1, 7, 14, 40], [1, 0, 2, 40], [1, 0, 20, 40]), but [1, 6, 14, 40] is a valid shortest route.
+
+Notes for your paper:
+- This is a BFS-level proof: distance(1) = 0, distance(1→6) = 1, distance(1→14) = 2, distance(1→40) = 3.
+- There was no need to run code; the conclusion follows from inspecting the adjacency lists and verifying hop counts. If you want, I can provide a formal BFS outline or a small hand-run table for citation.
+
+Answer: [15, 9, 4, 12, 46]
+
+How I found it (no code used):
+- Since node 46 is connected only to 0, 6, 12, and 16, any shortest path from 15 to 46 must end via one of these four nodes.
+- Compute the best distance from 15 to each of these four nodes (roughly a Dijkstra-style local check around the start):
+  - To 6: best route is 15 -> 9 -> 6 with cost 212 + 68 = 280.
+  - To 12: best route is 15 -> 9 -> 4 -> 12 with cost 212 + 57 + 88 = 357 (better than 15 -> 9 -> 12 which is 466).
+  - To 0: best route is 15 -> 9 -> 11 -> 0 with cost 212 + 28 + 123 = 363.
+  - To 16: best route is 15 -> 9 -> 11 -> 16 with cost 212 + 28 + 80 = 320.
+- Add the final hop to 46:
+  - Via 6: 280 + 299 = 579
+  - Via 12: 357 + 220 = 577
+  - Via 0: 363 + 563 = 926
+  - Via 16: 320 + 1440 = 1760
+- The smallest total is 577 via 12, i.e., path 15 -> 9 -> 4 -> 12 -> 46.
+- There is a close alternative path 15 -> 9 -> 6 -> 46 with total 579, but it’s slightly longer than 577.
+
+Proof (explicit costs):
+- Edges used: 15-9 (212), 9-4 (57), 4-12 (88), 12-46 (220).
+- Total cost: 212 + 57 + 88 + 220 = 577.
+- Comparisons:
+  - 15-9-6-46 = 212 + 68 + 299 = 579
+  - 15-9-12-46 = 212 + 254 + 220 = 686
+  - 15-9-11-0-46 = 212 + 28 + 123 + 563 = 926
+  - 15-9-11-16-46 = 212 + 28 + 80 + 1440 = 1760
+
+Note: I did not run code. The reasoning above is a manual shortest-path check with exact edge sums to compare candidate routes. If you’d like, I can provide a formal write-up or pseudo-code suitable for inclusion in a paper (e.g., a concise derivation using Dijkstra’s principle and a small table of candidate-path costs).

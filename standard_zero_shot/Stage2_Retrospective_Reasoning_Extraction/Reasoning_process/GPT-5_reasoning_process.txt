@@ -1,0 +1,76 @@
+Answer: [0, 1, 2, 3, 4, 5, 6, 13, 20, 27, 34, 41, 48]
+
+How I found it (no code):
+- The topology is a 7x7 grid: nodes 0–6 are the top row, 7–13 the next, …, 42–48 the bottom row. Each node connects to its right neighbor (+1) and its down neighbor (+7) when those exist. All edges have equal weight, so the shortest path is the fewest hops.
+- Map node n to grid coordinates (row, col) = (n // 7, n % 7). Then 0 is (0,0) and 48 is (6,6).
+- Any path from (0,0) to (6,6) must move right 6 times and down 6 times, for at least 12 hops. This is a lower bound (Manhattan distance).
+- The provided path moves right 6 times: 0→1→2→3→4→5→6, then down 6 times: 6→13→20→27→34→41→48. That is exactly 12 hops, meeting the lower bound, hence it is shortest.
+- No code was run; this is an analytic argument based on the grid structure and equal edge weights.
+
+Answer: [1,6,14,40]
+
+How I found it (no code used):
+- Because every edge has the same weight (100), the shortest path is the one with the fewest hops (BFS logic).
+- Neighbors of the source 1 are {0, 6, 7}. None is 40, and none of these connect directly to 40:
+  - 0’s neighbors do not include 40.
+  - 6’s neighbors do not include 40.
+  - 7’s neighbors do not include 40.
+  Therefore, a 2-hop path from 1 to 40 does not exist.
+- Look at neighbors of the destination 40: {2, 27, 20, 14}.
+- Check which of these are reachable from 1 in two hops:
+  - 2 is reachable via 1–0–2 (since 1–0 and 0–2 exist).
+  - 14 is reachable via 1–6–14 and also 1–7–14.
+  - 20 is reachable via 1–0–20 and also 1–7–20.
+  - 27 is not reachable from {0,6,7} in one more hop (it’s not in any of their neighbor sets).
+- Since nodes {2,14,20} are at distance 2 from 1 and each connects to 40, a 3-hop path exists and is shortest.
+
+One valid shortest path:
+- 1 → 6 (edge exists: 1 has neighbor 6)
+- 6 → 14 (edge exists: 6 has neighbor 14)
+- 14 → 40 (edge exists: 14 has neighbor 40)
+Thus: [1,6,14,40].
+
+Other equally short alternatives include:
+- [1,0,2,40]
+- [1,0,20,40]
+- [1,7,20,40]
+- [1,7,14,40]
+
+No code was run; the result follows directly from manual BFS reasoning and checking the provided adjacency lists.
+
+Answer: [15, 9, 6, 46]
+
+No code was run. Here is a concise proof-by-hand.
+
+Key observation
+- Node 46 is only connected to {16, 0, 12, 6}. Any path from 15 to 46 must end with one of these as the penultimate node. Therefore the shortest distance is:
+  min{dist(15,16)+w(16,46), dist(15,0)+w(0,46), dist(15,12)+w(12,46), dist(15,6)+w(6,46)}
+
+Compute the needed source-to-neighbor distances by hand
+- dist(15,6):
+  - 15→9→6 = 212 + 68 = 280
+  - Any alternative via 5 (e.g., 15→5→38→6 = 216 + 66 + 56 = 338) or others is larger.
+  - So dist(15,6) = 280
+
+- dist(15,12):
+  - 15→5→1→0→12 = 216 + 81 + 39 + 35 = 371
+  - Other routes (e.g., 15→9→12 = 466; 15→5→38→6→12 = 430; 15→9→18→22→8→12 = 474) are larger.
+  - So dist(15,12) = 371
+
+- dist(15,0):
+  - 15→5→1→0 = 216 + 81 + 39 = 336
+  - Other routes (e.g., 15→9→11→0 = 363; 15→5→39→0 = 388) are larger.
+  - So dist(15,0) = 336
+
+- dist(15,16):
+  - 15→9→11→16 = 212 + 28 + 80 = 320
+  - Other routes (e.g., via 45: 15→9→45→16 = 212 + 94 + 40 = 346) are larger.
+  - So dist(15,16) = 320
+
+Add the last hop to 46 and select the minimum
+- via 6: 280 + w(6,46)=299 → 579
+- via 12: 371 + w(12,46)=220 → 591
+- via 0: 336 + w(0,46)=563 → 899
+- via 16: 320 + w(16,46)=1440 → 1760
+
+Minimum is 579, achieved by 15→9→6→46. This also yields the explicit shortest path above.

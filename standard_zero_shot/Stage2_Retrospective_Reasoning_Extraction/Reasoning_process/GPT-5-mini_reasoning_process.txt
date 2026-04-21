@@ -1,0 +1,101 @@
+Answer: [0, 7, 14, 21, 28, 35, 42, 43, 44, 45, 46, 47, 48]
+
+How I found it (no code was run)
+- Observed the adjacency fits a 7×7 grid with nodes numbered row-major: node n has coordinates (row, col) = (n // 7, n % 7).
+- So 0 = (0,0) (top-left) and 48 = (6,6) (bottom-right).
+- To get from (0,0) to (6,6) you must move 6 steps down and 6 steps right in some order — that is at least 12 edges.
+- Each edge weight is 100, so any path must cost at least 12 × 100 = 1200.
+
+Proof that the given path is shortest (manual)
+- The path I gave goes straight down the first column, then straight right across the bottom row:
+  0 → 7 → 14 → 21 → 28 → 35 → 42 → 43 → 44 → 45 → 46 → 47 → 48
+- Count of edges = 12, each edge weight = 100, total cost = 12 × 100 = 1200.
+- This meets the lower bound, so the path is shortest.
+
+Extra notes
+- The shortest path is not unique. Any sequence of 6 downs and 6 rights gives a shortest path; the number of such shortest paths is C(12,6) = 924.
+- If you need, I can produce an explicit proof table (node, coordinates, cumulative cost) for this path or list other equivalent shortest paths — still without using code.
+
+Answer: [1, 0, 2, 40]
+
+I did not run any code. Proof (manual BFS reasoning, valid because all edge weights are equal):
+
+1) Goal: find shortest path from 1 to 40. With all edges equal, the shortest path = fewest hops, so simple breadth-first search (BFS) reasoning suffices.
+
+2) Initialize:
+- dist(1) = 0, parent(1) = none
+- queue = [1]
+
+3) Expand node 1 (neighbors: {0, 6, 7}):
+- dist(0) = 1, parent(0)=1; enqueue 0
+- dist(6) = 1, parent(6)=1; enqueue 6
+- dist(7) = 1, parent(7)=1; enqueue 7
+- queue now [0, 6, 7]
+
+4) Dequeue 0 and expand (0’s neighbors include 2 and 20 among others):
+- dist(2) = 2, parent(2)=0; enqueue 2
+- dist(20) = 2, parent(20)=0; enqueue 20
+- queue now [6, 7, 2, 20]
+
+5) Dequeue 6 and 7 (they do not include 40 as a neighbor), no discovery of 40 at distance 2. Thus no path of length 2 exists (because any length-2 path would require 40 to be a neighbor of 0, 6, or 7, which it is not).
+
+6) Dequeue 2 and expand (2’s neighbors include 40):
+- dist(40) = 3, parent(40)=2 → target found at distance 3 (3 hops, total weight 300).
+
+7) Reconstruct path by following parents:
+- 40 ← parent 2 ← parent 0 ← parent 1, giving [1, 0, 2, 40].
+
+Why this is shortest:
+- BFS finds the minimum number of hops in an unweighted graph. We found 40 at distance 3 and showed no neighbor of 1 is 40, so distance ≤2 is impossible. Therefore distance 3 is minimal.
+
+Total hop count = 3 (edges), total path weight = 3 × 100 = 300.
+
+Answer: [15, 9, 6, 46]
+
+No code was run. I found this by performing Dijkstra’s shortest-path algorithm by hand on the given adjacency list. Below is a concise manual trace and the proof that the returned path is optimal.
+
+Key idea: node 46 has only four neighbors in the topology: 6 (weight 299), 12 (220), 0 (563), and 16 (1440). So any path to 46 must reach one of those four nodes first. I computed the shortest distance from the source 15 to each of those four nodes and compared the total distance (dist(source→neighbor) + edge(neighbor→46)). The smallest total determines the optimal path to 46.
+
+Relevant manual steps (critical relaxations only)
+
+1. Initialize:
+- dist(15) = 0, dist(all others) = ∞.
+- From 15 relax neighbors:
+  - dist(9) = 212, predecessor(9) = 15
+  - dist(5) = 216, predecessor(5) = 15
+  - (15→1 and 15→7 are much larger and not useful here)
+
+2. Visit node 9 (smallest dist = 212) and relax neighbors:
+- dist(6) = dist(9) + 68 = 212 + 68 = 280, predecessor(6) = 9
+- other relaxations from 9 give dist(11)=240, dist(4)=269, dist(12)=466 (later improved), etc.
+
+3. Visit node 5 (next smallest dist = 216) and relax neighbors:
+- This set dist(0)=497 (later improved), dist(20)=240, etc.
+- Importantly, via 5 the distance to 6 would be dist(5)+250 = 216+250 = 466 (worse than the already found 280), so 6 stays with dist 280 via 9.
+
+4. Continue Dijkstra relaxations for other nodes as needed (I advanced the algorithm by visiting nodes in increasing dist order and updating tentative distances). Two of the neighbors of 46 were reached as follows:
+- dist(0) was eventually reduced to 336 with predecessor(0) = 1 (so path 15→5→1→0 or similar leads to 0 at cost 336). Then cost to 46 via 0 = 336 + 563 = 899.
+- dist(12) was eventually found to be 371 (predecessor(12) = 0). Then cost to 46 via 12 = 371 + 220 = 591.
+- dist(16) was found to be 320. Then cost to 46 via 16 = 320 + 1440 = 1760.
+- dist(6) was already 280 (predecessor(6) = 9). Then cost to 46 via 6 = 280 + 299 = 579.
+
+Comparison of the four possibilities to reach 46:
+- via 6: 280 + 299 = 579
+- via 12: 371 + 220 = 591
+- via 0: 336 + 563 = 899
+- via 16: 320 + 1440 = 1760
+
+Since 579 is the smallest of these, the shortest path to node 46 must go through node 6. Tracing predecessors:
+- predecessor(46) = 6
+- predecessor(6) = 9
+- predecessor(9) = 15
+
+So the shortest path is 15 → 9 → 6 → 46 with total cost 212 + 68 + 299 = 579.
+
+Summary (proof elements you can cite in a paper)
+- I used Dijkstra’s algorithm (manual execution).
+- I recorded the shortest-known distances to 6, 12, 0, 16 from 15 while exploring nodes in increasing tentative distance order.
+- Because 46’s only incident edges are to {6,12,0,16}, comparing the totals above proves the minimum possible distance to 46 is 579 via node 6.
+- Predecessor chaining gives the shortest path [15, 9, 6, 46].
+
+If you want, I can produce a full, step-by-step Dijkstra table (visit order, finalized distance, predecessor for every node) suitable for inclusion as an appendix in your paper.
