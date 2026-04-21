@@ -1,0 +1,91 @@
+graph_id,topology_type,weight_distribution,node_pair,predicted_path,LLM,param_number,quantisation_level,token_count_prompt,token_count_completion,response_time_duration
+1870,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,653,7.042655944824219
+1871,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,904,7.6689817905426025
+1872,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,769,3.567307710647583
+1873,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,798,4.616724252700806
+1874,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,491,2.736240863800049
+1875,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,574,3.664428472518921
+1876,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,662,3.550096035003662
+1877,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,615,3.011826753616333
+1878,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,487,2.4495813846588135
+1879,fat_tree,lognormal,"[0, 3]","[0, 1, 2, 3]",GPT-4o,Unknown,Unknown,198,511,2.9073326587677
+1880,fat_tree,lognormal,"[7, 13]","[7, 3, 1, 0, 2, 6, 13]",GPT-4o,Unknown,Unknown,365,1540,6.304026126861572
+1881,fat_tree,lognormal,"[9, 12]","[9, 4, 1, 0, 2, 5, 12]",GPT-4o,Unknown,Unknown,363,1208,4.468439340591431
+1882,fat_tree,lognormal,"[8, 11]","[8, 3, 1, 0, 2, 5, 11]",GPT-4o,Unknown,Unknown,363,1852,6.706429481506348
+1883,fat_tree,lognormal,"[10, 14]","[10, 4, 1, 0, 2, 6, 14]",GPT-4o,Unknown,Unknown,363,1081,4.350569725036621
+1884,fat_tree,lognormal,"[7, 14]","[7, 3, 1, 0, 2, 6, 14]",GPT-4o,Unknown,Unknown,365,1127,4.433135032653809
+1885,fat_tree,lognormal,"[8, 12]","[8, 3, 1, 0, 2, 5, 12]",GPT-4o,Unknown,Unknown,363,3003,10.152948141098022
+1886,fat_tree,lognormal,"[8, 14]","[8, 3, 1, 0, 2, 6, 14]",GPT-4o,Unknown,Unknown,363,1071,4.420770168304443
+1887,fat_tree,lognormal,"[7, 11]","[7, 3, 1, 0, 2, 5, 11]",GPT-4o,Unknown,Unknown,363,1911,8.009035587310791
+1888,fat_tree,lognormal,"[8, 13]","[8, 3, 1, 0, 2, 6, 13]",GPT-4o,Unknown,Unknown,363,1950,7.458845615386963
+1889,fat_tree,lognormal,"[7, 11]","[7, 3, 1, 0, 2, 5, 11]",GPT-4o,Unknown,Unknown,363,1106,4.5647032260894775
+1890,fat_tree,lognormal,"[17, 28]","[17, 5, 1, 0, 2, 9, 28]",GPT-4o,Unknown,Unknown,740,2771,11.25093126296997
+1891,fat_tree,lognormal,"[30, 36]","[2, 28]",GPT-4o,Unknown,Unknown,742,1258,5.306167364120483
+1892,fat_tree,lognormal,"[24, 36]","[24, 7, 2, 0, 3, 11, 36]",GPT-4o,Unknown,Unknown,740,1592,6.67148232460022
+1893,fat_tree,lognormal,"[27, 37]","[27, 8, 2, 0, 3, 12, 37]",GPT-4o,Unknown,Unknown,740,2965,11.723224878311157
+1894,fat_tree,lognormal,"[24, 39]","[24, 7, 2, 0, 3, 12, 39]",GPT-4o,Unknown,Unknown,738,1493,6.774068832397461
+1895,fat_tree,lognormal,"[16, 25]","[16, 5, 1, 0, 2, 8, 25]",GPT-4o,Unknown,Unknown,740,5170,19.49007821083069
+1896,fat_tree,lognormal,"[18, 31]","[18, 5, 1, 0, 3, 10, 31]",GPT-4o,Unknown,Unknown,744,2463,9.609725713729858
+1897,fat_tree,lognormal,"[26, 36]","[26, 8, 2, 0, 3, 11, 36]",GPT-4o,Unknown,Unknown,738,2809,10.559956789016724
+1898,fat_tree,lognormal,"[16, 29]","[16, 5, 1, 0, 2, 9, 29]",GPT-4o,Unknown,Unknown,744,3424,11.835428714752197
+1899,fat_tree,lognormal,"[13, 27]","[13, 4, 1, 0, 2, 8, 27]",GPT-4o,Unknown,Unknown,740,2576,8.865773916244507
+1900,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,1084,4.448128938674927
+1901,fat_tree,lognormal,"[0, 4]",[4],GPT-4o,Unknown,Unknown,213,915,4.083494663238525
+1902,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,740,3.368274211883545
+1903,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,215,1130,4.4195051193237305
+1904,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,839,3.7853527069091797
+1905,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,867,3.687627077102661
+1906,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,713,3.1859476566314697
+1907,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,910,4.0375816822052
+1908,fat_tree,lognormal,"[0, 4]","[4, 3, 2, 1, 0]",GPT-4o,Unknown,Unknown,215,874,3.7448740005493164
+1909,fat_tree,lognormal,"[0, 4]","[0, 1, 2, 3, 4]",GPT-4o,Unknown,Unknown,213,1022,4.147853136062622
+1910,fat_tree,lognormal,"[19, 27]","[19, 9, 4, 1, 0, 2, 6, 13, 27]",GPT-4o,Unknown,Unknown,605,1949,7.045833349227905
+1911,fat_tree,lognormal,"[22, 25]","[22, 10, 4, 1, 0, 2, 5, 12, 25]",GPT-4o,Unknown,Unknown,603,1462,6.027063608169556
+1912,fat_tree,lognormal,"[17, 24]","[17, 8, 3, 1, 0, 2, 5, 11, 24]",GPT-4o,Unknown,Unknown,603,2101,7.998864650726318
+1913,fat_tree,lognormal,"[21, 27]","[21, 10, 4, 1, 0, 2, 6, 13, 27]",GPT-4o,Unknown,Unknown,605,2589,9.656476497650146
+1914,fat_tree,lognormal,"[20, 29]","[20, 9, 4, 1, 0, 2, 6, 14, 29]",GPT-4o,Unknown,Unknown,603,2311,8.643616914749146
+1915,fat_tree,lognormal,"[22, 30]","[22, 10, 4, 1, 0, 2, 6, 14, 30]",GPT-4o,Unknown,Unknown,603,2675,9.268607378005981
+1916,fat_tree,lognormal,"[18, 30]","[18, 8, 3, 1, 0, 2, 6, 14, 30]",GPT-4o,Unknown,Unknown,605,2111,8.673820734024048
+1917,fat_tree,lognormal,"[20, 26]","[20, 9, 4, 1, 0, 2, 5, 12, 26]",GPT-4o,Unknown,Unknown,603,2224,7.757637977600098
+1918,fat_tree,lognormal,"[22, 30]","[22, 10, 4, 1, 0, 2, 6, 14, 30]",GPT-4o,Unknown,Unknown,605,1292,5.11791205406189
+1919,fat_tree,lognormal,"[18, 25]","[18, 8, 3, 1, 0, 2, 5, 12, 25]",GPT-4o,Unknown,Unknown,603,2386,8.69355297088623
+1920,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,768,4.050553321838379
+1921,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,849,3.7369279861450195
+1922,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,1009,4.378365993499756
+1923,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,1228,4.596393823623657
+1924,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,849,3.725632905960083
+1925,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,808,3.6728131771087646
+1926,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,1158,5.038657188415527
+1927,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,833,3.642970323562622
+1928,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,708,3.175149440765381
+1929,fat_tree,lognormal,"[0, 5]","[0, 1, 2, 3, 4, 5]",GPT-4o,Unknown,Unknown,228,857,3.850843667984009
+1930,fat_tree,lognormal,"[34, 53]","[34, 16, 7, 3, 1, 0, 2, 5, 12, 26, 53]",GPT-4o,Unknown,Unknown,1083,680,3.305298089981079
+1931,fat_tree,lognormal,"[37, 54]",[0],GPT-4o,Unknown,Unknown,1087,720,3.466240644454956
+1932,fat_tree,lognormal,"[45, 54]","[45, 22, 10, 4, 1, 0, 2, 5, 12, 26, 54]",GPT-4o,Unknown,Unknown,1083,3429,12.66736125946045
+1933,fat_tree,lognormal,"[44, 53]",[0],GPT-4o,Unknown,Unknown,1085,1523,6.8098814487457275
+1934,fat_tree,lognormal,"[36, 60]","[36, 17, 8, 3, 1, 0, 2, 6, 14, 29, 60]",GPT-4o,Unknown,Unknown,1083,3745,14.16940712928772
+1935,fat_tree,lognormal,"[40, 49]","[40, 19, 9, 4, 10, 22, 46, 24, 49]",GPT-4o,Unknown,Unknown,1083,1276,5.89829683303833
+1936,fat_tree,lognormal,"[49, 57]","[49, 24, 11, 5, 2, 6, 13, 28, 57]",GPT-4o,Unknown,Unknown,1085,1919,7.527051210403442
+1937,fat_tree,lognormal,"[40, 52]","[40, 19, 9, 4, 10, 22, 45, 25, 52]",GPT-4o,Unknown,Unknown,1085,955,5.16220760345459
+1938,fat_tree,lognormal,"[39, 53]","[39, 19, 9, 4, 1, 0, 2, 5, 12, 26, 53]",GPT-4o,Unknown,Unknown,1085,2253,9.261334657669067
+1939,fat_tree,lognormal,"[31, 42]","[31, 15, 7, 3, 1, 4, 10, 22, 45, 46, 42]",GPT-4o,Unknown,Unknown,1091,2051,7.978868007659912
+2850,fat_tree,lognormal,"[87, 119]","[87, 28, 9, 2, 0, 3, 12, 39, 119]",GPT-4o,Unknown,Unknown,1961,7901,28.062551259994507
+2851,fat_tree,lognormal,"[57, 85]",[0],GPT-4o,Unknown,Unknown,1969,5141,18.96044158935547
+2852,fat_tree,lognormal,"[46, 117]","[46, 15, 4, 1, 6, 19, 59, 60, 58, 20, 63, 62, 61, 21, 65, 64, 66, 0, 2, 3, 12, 39, 119, 118, 120, 37, 114, 113, 112, 10, 31, 94, 95, 96, 33, 101, 102, 100, 11, 35, 106, 107, 108, 36, 111, 110, 109, 34, 103, 105, 104, 32, 99, 97, 98, 7, 23, 71, 70, 72, 24, 73, 74, 75, 22, 69, 67, 68, 8, 26, 79, 81, 80, 27, 84, 83, 82, 25, 76, 78, 77, 9, 30, 92, 91, 93, 28, 87, 85, 86, 29, 90, 89, 88, 5, 16, 49, 50, 51, 17, 52, 53, 54, 18, 55, 56, 57, 13, 40, 41, 42, 14, 43, 44, 45, 46, 47, 48, 117]",GPT-4o,Unknown,Unknown,1959,5389,19.105402946472168
+2853,fat_tree,lognormal,"[64, 119]","[64, 21, 6, 1, 0, 2, 9, 28, 87, 119]",GPT-4o,Unknown,Unknown,1961,726,3.876472234725952
+2854,fat_tree,lognormal,"[80, 113]","[80, 26, 8, 2, 0, 3, 12, 37, 113]",GPT-4o,Unknown,Unknown,1959,3372,12.316365718841553
+2855,fat_tree,lognormal,"[71, 113]","[71, 23, 7, 2, 0, 3, 12, 37, 113]",GPT-4o,Unknown,Unknown,1957,2573,9.757664203643799
+2856,fat_tree,lognormal,"[46, 69]","[46, 15, 4, 14, 43, 22, 69]",GPT-4o,Unknown,Unknown,1955,606,3.3406856060028076
+2857,fat_tree,lognormal,"[71, 107]","[71, 23, 7, 2, 0, 1, 4, 14, 43, 107]",GPT-4o,Unknown,Unknown,1953,886,3.907228946685791
+2858,fat_tree,lognormal,"[73, 111]","[73, 24, 7, 2, 0, 1, 4, 15, 48, 111]",GPT-4o,Unknown,Unknown,1959,6777,25.874801635742188
+2859,fat_tree,lognormal,"[66, 86]","[66, 21, 6, 19, 60, 28, 86]",GPT-4o,Unknown,Unknown,1955,599,3.3446099758148193
+2860,fat_tree,lognormal,"[222, 243]","[182, 221]",GPT-4o,Unknown,Unknown,3971,2835,11.32191252708435
+2861,fat_tree,lognormal,"[153, 214]","[153, 76, 154, 214]",GPT-4o,Unknown,Unknown,3979,486,2.898860454559326
+2862,fat_tree,lognormal,"[142, 250]",[0],GPT-4o,Unknown,Unknown,3971,1028,4.790170192718506
+2863,fat_tree,lognormal,"[132, 238]","[132, 65, 32, 15, 7, 3, 8, 38, 77, 155, 238]",GPT-4o,Unknown,Unknown,3973,5807,20.66116499900818
+2864,fat_tree,lognormal,"[135, 192]","[150, 33]",GPT-4o,Unknown,Unknown,3979,3530,14.576111793518066
+2865,fat_tree,lognormal,"[138, 197]","[138, 98, 197]",GPT-4o,Unknown,Unknown,3987,676,3.588322162628174
+2866,fat_tree,lognormal,"[146, 243]","[146, 145, 72, 243]",GPT-4o,Unknown,Unknown,3977,661,3.582057476043701
+2867,fat_tree,lognormal,"[166, 244]","[166, 82, 40, 19, 9, 4, 1, 0, 2, 5, 11, 23, 47, 95, 191, 192, 95, 47, 23, 11, 5, 2, 0, 1, 4, 9, 19, 40, 82, 166]",GPT-4o,Unknown,Unknown,3981,16384,57.15561366081238
+2868,fat_tree,lognormal,"[173, 214]","[173, 86, 42, 214]",GPT-4o,Unknown,Unknown,3977,595,3.23043155670166
+2869,fat_tree,lognormal,"[165, 189]","[165, 82, 40, 19, 39, 79, 160, 189]",GPT-4o,Unknown,Unknown,3979,626,3.050612688064575
